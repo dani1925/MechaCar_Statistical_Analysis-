@@ -93,6 +93,7 @@ suspension_coil_lot2_PSI <- subset(suspension_coil,Manufacturing_Lot == "Lot2", 
 suspension_coil_lot3_PSI <- subset(suspension_coil,Manufacturing_Lot == "Lot3", PSI)
 t.test(x = suspension_coil_lot1_PSI, mu = total_summary$Mean)
 t.test(x = suspension_coil_lot2_PSI, mu = total_summary$Mean)
-ggplot(mtcars,aes(x=mpg))+geom_density()
 
-t.test(x = suspension_coil_lot3_PSI, mu = total_summary$Mean)
+shapiro.test(mtcars$mpg)
+ggplot(mtcars,aes(x=mpg))+geom_density()
+t.test(x=data$mpg,mu=mean(mtcars$mpg))
